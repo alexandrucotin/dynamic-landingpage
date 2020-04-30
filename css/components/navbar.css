@@ -1,0 +1,31 @@
+.navbar {
+  position: fixed;
+  grid-area: navbar;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
+}
+
+.navbar-list {
+  text-align: center;
+  margin: 2rem;
+}
+
+.navbar-item {
+  padding: 0.1rem 0;
+  font-weight: 300;
+  font-size: 1.2rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.active{
+    font-weight: bold;
+}
