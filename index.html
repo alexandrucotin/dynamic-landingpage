@@ -13,25 +13,31 @@
   <body>
     <nav class="navbar">
       <a href="/" class="logo">landing page</a>
-      <ul class="navbar-list">
-        <li class="navbar-item active"><a>home</a></li>
-        <li class="navbar-item"><a>about us</a></li>
-        <li class="navbar-item"><a>services</a></li>
-        <li class="navbar-item"><a>portfolio</a></li>
-        <li class="navbar-item"><a>contact us</a></li>
-      </ul>
+      <ul class="navbar-list white" id="link-list">
+        </ul>
     </nav>
     <main class="page-container">
       <section class="section home">
-        <h1 class="home-title">Welcome</h1>
-        <p class="secondary-title"><span>this is</span> <span>my</span> <span>landing</span> <span>page</span></p>
+        <h1 class="title size-10 white">Welcome</h1>
+        <p class="secondary-title white">
+          <span>this is</span> <span>my</span> <span>landing</span>
+          <span>page</span>
+        </p>
       </section>
-      <section class="section"></section>
-      <section class="section"></section>
-      <section class="section"></section>
-      <section class="section"></section>
-      <section class="section"></section>
-      <section class="section"></section>
+      <section class="section create">
+        <h3 class="title size-5 white">Create your section!</h3>
+        <form action="" class="form" id="form">
+          <div class="form-group">
+            <label for="" class="form-label">title</label>
+            <input type="text" id="title" />
+          </div>
+          <div class="form-group">
+            <label for="" class="form-label">content</label>
+            <textarea name="content" id="content"> </textarea>
+          </div>
+          <input type="submit" id="submit" value="Submit" />
+        </form>
+      </section>
     </main>
     <footer class="footer"></footer>
   </body>

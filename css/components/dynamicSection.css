@@ -1,0 +1,7 @@
+.dynamic{
+    flex-direction: column;
+}
+
+.content{
+    margin: 3rem 0;
+}

@@ -1,0 +1,19 @@
+.create {
+  color: white;
+  flex-direction: column;
+}
+
+.form {
+  margin-top: 2rem;
+  width: 40%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 1rem 0;
+}
+
+.form-label {
+  padding: 1rem 1rem 1rem 0;
+}
