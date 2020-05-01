@@ -25,8 +25,8 @@ function createSection(title, content) {
   //create section tag
   const newSection = document.createElement("section");
   newSection.classList.add("section", "dynamic");
-  const idSection = title.textContent.replace(/ /g, '-')
-  newSection.setAttribute("id",idSection);
+  const idSection = title.textContent.replace(/ /g, "-");
+  newSection.setAttribute("id", idSection);
   //get last section
   const pageContent = document.querySelector(".page-container");
   //appen title and content to new section
@@ -48,6 +48,15 @@ function checkExisting(title) {
   return exists;
 }
 
+function formError() {
+  const form = document.querySelector("#form");
+  const newP = document.createElement("p");
+  newP.classList.add("white", "size-2");
+  //add content text
+  newP.textContent = "there is already a section with this name!";
+  form.appendChild(newP);
+}
+
 function form() {
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
@@ -60,44 +69,53 @@ function form() {
       navTitle = newTitle.textContent;
       updateNavbar(navTitle);
     } else {
-      const form = document.querySelector("#form");
-      const newP = document.createElement("p");
-      newP.classList.add("white", "size-2");
-      //add content text
-      newP.textContent = "there is already a section with this name!";
-      form.appendChild(newP);
+      formError();
     }
   });
 }
 
-function updateNavbar(link) {
-  text = link.textContent;
-  let present = false;
-  const navItems = document.querySelectorAll(".navbar-item");
-  for (let i = 0; i < navItems.length; ++i) {
-    if (link === navItems[i]) {
-      present = true;
-    }
-  }
-  if (present) {
-    console.log("there is already a section with this name!");
-  } else {
-    const newNavItem = document.createElement("li");
-    newNavItem.textContent = link;
-    newNavItem.classList.add("navbar-item");
-    linkList.appendChild(newNavItem);
-  }
+function updateNavbar(item) {
+  const newNavLink = document.createElement("a");
+  const newNavItem = document.createElement("li");
+  //inserting the title of the section inside the <a> tag
+  newNavLink.textContent = item;
+  newNavLink.setAttribute(
+    "href",
+    `#${item.toLowerCase().replace(/ /g, "-")}`
+  );
+
+  // adding class to the <li> tag
+  newNavItem.classList.add("navbar-item");
+
+  //append items to page
+  newNavItem.appendChild(newNavLink);
+  linkList.appendChild(newNavItem);
 }
 
 function navbar() {
+  //get all static sections
   const sections = document.querySelectorAll("section");
-  for (let i = 0; i < sections.length; ++i) {
-    const textItem = sections[i].firstElementChild.textContent;
+
+  sections.forEach((section) => {
+    const title = section.firstElementChild.textContent;
+    //creating <a> and <li> items
+    const newNavLink = document.createElement("a");
     const newNavItem = document.createElement("li");
-    newNavItem.textContent = textItem;
+
+    //inserting the title of the section inside the <a> tag
+    newNavLink.textContent = title;
+    newNavLink.setAttribute(
+      "href",
+      `#${title.toLowerCase().replace(/ /g, "-")}`
+    );
+
+    // adding class to the <li> tag
     newNavItem.classList.add("navbar-item");
+
+    //append items to page
+    newNavItem.appendChild(newNavLink);
     linkList.appendChild(newNavItem);
-  }
+  });
 }
 
 navbar();
