@@ -55,20 +55,29 @@ function formError() {
   //add content text
   newP.textContent = "there is already a section with this name!";
   form.appendChild(newP);
+  setTimeout(function() {;
+    // 1s - time of the animation duration
+    // set transition property for webkit browsers only
+    newP.style.WebkitTransition = 'opacity 1s ease-in-out;'
+    newP.style.opacity = '0';
+    form.removeChild(newP);
+  }, 1250);
 }
 
 function form() {
+  updated = false;
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
     if (title != "" && content != "" && !checkExisting(title)) {
+      const navLinks = document.querySelectorAll(".scroll");
       const newTitle = createTitle(title);
       const newContent = createContent(content);
       createSection(newTitle, newContent);
       navTitle = newTitle.textContent;
       updateNavbar(navTitle);
-    } else {
+    }else{
       formError();
     }
   });
@@ -92,7 +101,6 @@ function updateNavbar(item) {
 function navbar() {
   //get all static sections
   const sections = document.querySelectorAll("section");
-
   sections.forEach((section) => {
     const title = section.firstElementChild.textContent;
     //creating <a> and <li> items
@@ -114,6 +122,7 @@ function navbar() {
     newNavItem.appendChild(newNavLink);
     linkList.appendChild(newNavItem);
   });
+
 }
 
 navbar();
