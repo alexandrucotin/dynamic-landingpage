@@ -1,16 +1,22 @@
 .navbar {
-  position: fixed;
   grid-area: navbar;
-  height: 100%;
-  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+}
+
+#link-list{
+  list-style: none;
+  display: block;
+  margin: 0;
+  display: none;
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Lobster", cursive;
 }
 
@@ -27,4 +33,53 @@
 
 .active{
     font-weight: bold;
+}
+
+
+@media (min-width:600px) and (max-width: 900px ){
+  .navbar {
+    position: fixed;
+    grid-area: navbar;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2rem;
+    font-family: "Lobster", cursive;
+  }
+  
+  .navbar-list {
+    margin: 2rem;
+  }
+  
+  .navbar-item {
+    padding: 0.1rem 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+    font-family: "Oswald", sans-serif;
+  }
+  
+  .active{
+      font-weight: bold;
+  }
+}
+
+@media (min-width:900px){
+  body {
+    overflow: hidden;
+    background-color: #333;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 9fr 1fr;
+    grid-template-areas:
+      "navbar main"
+      "footer footer";
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+  }
 }

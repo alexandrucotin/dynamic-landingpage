@@ -1,3 +1,6 @@
+// The code was taken  from the MDN web docs 
+// Link: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
+
 const config = { childList: true };
 
 // Callback function to execute when mutations are observed

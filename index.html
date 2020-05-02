@@ -9,11 +9,16 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lobster&family=Oswald:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   </head>
   <body>
     <nav class="navbar">
       <a href="/" class="logo">landing page</a>
-      <ul class="navbar-list white" id="link-list"></ul>
+      <ul class="navbar-list white" id="link-list">
+      </ul>
+      <a href="javascript:void(0);" class="icon" id="burger-menu">
+        <i class="fa fa-bars"></i>
+      </a>
     </nav>
     <main class="page-container">
       <section class="section home" id="welcome">
@@ -66,7 +71,7 @@
         </form>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">created by <b>Alexandru Cotin</b></footer>
   </body>
   <script src="./js/createSection.js"></script>
   <script src="./js/smoothScroll.js"></script>
