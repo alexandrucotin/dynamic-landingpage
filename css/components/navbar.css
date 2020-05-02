@@ -6,13 +6,17 @@
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  background-color: black;
 }
 
 #link-list{
   list-style: none;
-  display: block;
-  margin: 0;
   display: none;
+  margin: 0;
+}
+
+#link-list .navbar-item{
+  display: block;
 }
 
 .logo {
