@@ -79,10 +79,7 @@ function updateNavbar(item) {
   const newNavItem = document.createElement("li");
   //inserting the title of the section inside the <a> tag
   newNavLink.textContent = item;
-  newNavLink.setAttribute(
-    "href",
-    `#${item.toLowerCase().replace(/ /g, "-")}`
-  );
+  newNavLink.setAttribute("href", `#${item.toLowerCase().replace(/ /g, "-")}`);
 
   // adding class to the <li> tag
   newNavItem.classList.add("navbar-item");
@@ -101,6 +98,7 @@ function navbar() {
     //creating <a> and <li> items
     const newNavLink = document.createElement("a");
     const newNavItem = document.createElement("li");
+    newNavLink.classList.add("scroll");
 
     //inserting the title of the section inside the <a> tag
     newNavLink.textContent = title;
