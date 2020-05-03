@@ -4,7 +4,7 @@
 const config = { childList: true };
 
 // Callback function to execute when mutations are observed
-const callback = function (mutationsList, observer) {
+const callback = function (mutationsList) {
   for (let mutation of mutationsList) {
     if (mutation.type === "childList") {
       console.log("A section was added!");
