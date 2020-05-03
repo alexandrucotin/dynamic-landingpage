@@ -12,6 +12,6 @@ This is a dynamic landingpage where you can create dynamic sections with the for
 
 If you try to create two sections with the same name you will receive a warning that tells you that is not possible to create two section with the same title.
 
-Smooth scroll is enable inside the navbar and for the scroll wheel.
+Smooth scroll is enable inside the navbar and for the scroll wheel (only for the desktop view).
 
 If you also want to have in the scroll wheel in mobile/tablet version just put ``overflow:hidden`` inside the body tag. Keep in mind by doing this you will not be able to swipe down to see other sections. The only way to navigate the page will be only with the navbar. 
