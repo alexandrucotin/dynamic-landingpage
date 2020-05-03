@@ -2,6 +2,8 @@ const navbarLinks = document.querySelectorAll(".scroll");
 const list = document.querySelector("#link-list");
 const burgerMenu = document.getElementById("burger-menu");
 const arrow = document.getElementById("to-top");
+
+const current = document.getElementsByClassName("active");
 //index is used to check what section are you viewing currently: 0 = welcome section 1=about this landingpage section
 let index = 0;
 
@@ -44,6 +46,18 @@ function smoothScroll(id) {
   });
 }
 
+function activeLink(link) {
+  if (current.length === 0) {
+    link.className += " active";
+  } else {
+    for (let i = 0; i < list.children.length; i++) {
+      const element = list.children[i].firstChild;
+      element.classList.remove("active");
+    }
+    link.className += " active";
+  }
+}
+
 function scroll(links) {
   //this function recieves the list of the <li> that are inside the <ul> tag
   for (let i = 0; i < links.children.length; i++) {
@@ -52,6 +66,7 @@ function scroll(links) {
       event.preventDefault();
       const id = event.currentTarget.getAttribute("href");
       smoothScroll(id);
+      activeLink(event.currentTarget);
     });
   }
 }
