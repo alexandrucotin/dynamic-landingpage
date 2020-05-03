@@ -5,10 +5,10 @@ const config = { childList: true };
 
 // Callback function to execute when mutations are observed
 const callback = function (mutationsList, observer) {
-  // Use traditional 'for loops' for IE 11
   for (let mutation of mutationsList) {
     if (mutation.type === "childList") {
       console.log("A section was added!");
+      //if a section was added this list2 is the updated list of <li> items
       let list2 = document.querySelector("#link-list");
       scroll(list2);
       wheel(list2);

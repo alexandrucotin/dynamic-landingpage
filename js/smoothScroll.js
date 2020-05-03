@@ -2,12 +2,16 @@ const navbarLinks = document.querySelectorAll(".scroll");
 const list = document.querySelector("#link-list");
 const burgerMenu = document.getElementById("burger-menu");
 const arrow = document.getElementById("to-top");
+//index is used to check what section are you viewing currently: 0 = welcome section 1=about this landingpage section
 let index = 0;
 
 function wheel(myList) {
+  //smooth scrolling for the wheel event
   const length = myList.children.length;
   window.addEventListener("wheel", (e) => {
-    console.log(e);
+    //delta is the direction of the scroll
+    //if delta>0 you scroll up
+    //if delta<0 you scroll down
     const delta = e.wheelDelta;
     if (delta < 0 && index <= length) {
       index++;
@@ -31,30 +35,34 @@ function wheel(myList) {
   });
 }
 
-function scroll(links) {
-  for (let i = 0; i < links.children.length; i++) {
-    list.children[i].firstChild.addEventListener("click", (event) => {
-      event.preventDefault();
-      const id = event.currentTarget.getAttribute("href");
-      console.log(id);
-      smoothScroll(id);
-    });
-  }
-}
-
+//Smooth scrolling for the navbar clicks
 function smoothScroll(id) {
-  console.log(id);
+  //this function recieves an id for the section you want to scroll to
   const section = document.querySelector(id);
   section.scrollIntoView({
     behavior: "smooth",
   });
 }
 
+function scroll(links) {
+  //this function recieves the list of the <li> that are inside the <ul> tag
+  for (let i = 0; i < links.children.length; i++) {
+    list.children[i].firstChild.addEventListener("click", (event) => {
+      //here the function gets the value inside the href (which is also the section id) and it will be passed to the smoothscroll section.
+      event.preventDefault();
+      const id = event.currentTarget.getAttribute("href");
+      smoothScroll(id);
+    });
+  }
+}
+
+//this function checks when to show the arrow button
+window.onscroll = function () {
+  scrollFunction();
+};
+
 function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 639
-  ) {
+  if (document.documentElement.scrollTop > 639) {
     arrow.style.display = "block";
   } else {
     arrow.style.display = "none";
@@ -62,19 +70,14 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+//when the user clicks on the arrow button, it scrolls to the top of the page
 arrow.addEventListener("click", (event) => {
   event.preventDefault();
+  //using the smothscroll function with the id of the first section.
   smoothScroll("#welcome");
-  index=0;
+  index = 0;
 });
 
-// burger menu
-if (window.screen.width < 599) {
-  burgerMenu.addEventListener("click", (event) => {
-    burger();
-  });
-}
 function burger() {
   const linkList = document.getElementById("link-list");
   if (linkList.style.display === "flex") {
@@ -84,8 +87,12 @@ function burger() {
   }
 }
 
+//condition to show the burgermenu
+if (window.screen.width < 599) {
+  burgerMenu.addEventListener("click", (event) => {
+    burger();
+  });
+}
+
 wheel(list);
 scroll(list);
-window.onscroll = function () {
-  scrollFunction();
-};
