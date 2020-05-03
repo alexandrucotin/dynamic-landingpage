@@ -1,27 +1,22 @@
 .navbar {
-  grid-area: navbar;
   position: fixed;
   top: 0;
   width: 100%;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
   background-color: black;
 }
 
-#link-list{
+#link-list {
   list-style: none;
   display: none;
-  margin: 0;
-}
-
-#link-list .navbar-item{
-  display: block;
+  flex-direction: column;
+  margin: 2rem 0;
 }
 
 .logo {
   font-size: 1.5rem;
   font-family: "Lobster", cursive;
+  width: 100%;
 }
 
 .navbar-list {
@@ -31,59 +26,35 @@
 .navbar-item {
   padding: 0.1rem 0;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: "Oswald", sans-serif;
 }
 
-.active{
-    font-weight: bold;
+.icon {
+  position: absolute;
+  top: 1.4rem;
+  right: 1rem;
 }
 
-
-@media (min-width:600px) and (max-width: 900px ){
+@media (min-width: 600px) and (max-width: 1024px) {
   .navbar {
-    position: fixed;
     grid-area: navbar;
-    height: 100%;
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: unset;
+    height: 100%;
+    background-color: unset;
   }
-  .logo {
-    font-size: 2rem;
-    font-family: "Lobster", cursive;
+
+  #link-list {
+    display: flex;
   }
-  
-  .navbar-list {
-    margin: 2rem;
-  }
-  
-  .navbar-item {
-    padding: 0.1rem 0;
-    font-weight: 300;
-    font-size: 1.2rem;
-    font-family: "Oswald", sans-serif;
-  }
-  
-  .active{
-      font-weight: bold;
+
+  .icon {
+    display: none;
   }
 }
 
-@media (min-width:900px){
-  body {
-    overflow: hidden;
-    background-color: #333;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 2fr 8fr;
-    grid-template-rows: 9fr 1fr;
-    grid-template-areas:
-      "navbar main"
-      "footer footer";
-    font-family: "Lato", sans-serif;
-    font-size: 16px;
-  }
+@media (min-width: 1025px) {
 }

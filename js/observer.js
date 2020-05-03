@@ -1,4 +1,4 @@
-// The code was taken  from the MDN web docs 
+// The code was taken  from the MDN web docs
 // Link: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 
 const config = { childList: true };
@@ -11,6 +11,7 @@ const callback = function (mutationsList, observer) {
       console.log("A section was added!");
       let list2 = document.querySelector("#link-list");
       scroll(list2);
+      wheel(list2);
     }
   }
 };

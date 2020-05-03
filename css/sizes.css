@@ -8,6 +8,14 @@
   font-size: 2rem;
 }
 
+.size-2 {
+  font-size: 2rem;
+}
+
+.size-oneHalf {
+  font-size: 1.5rem;
+}
+
 /* paddings */
 
 .pt-1{
@@ -18,8 +26,19 @@
     padding-top: 2rem;
 }
 
+@media (min-width: 600px) and (max-width: 1024px) {
+  .size-10 {
+    font-size: 5rem;
+  }
+  
+  .size-5 {
+    font-size: 3rem;
+  }
 
-@media (min-width: 901px){
+}
+
+
+@media (min-width: 1025px){
 
 
   .size-10 {
@@ -30,11 +49,4 @@
     font-size: 5rem;
   }
   
-  .size-2 {
-    font-size: 2rem;
-  }
-  
-  .size-oneHalf {
-    font-size: 1.5rem;
-  }
 }

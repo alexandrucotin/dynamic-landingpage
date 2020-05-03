@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   </head>
   <body>
+    <a href="/" id="to-top"><i class="fas fa-arrow-up"></i></a>
     <nav class="navbar">
-      <a href="/" class="logo">landing page</a>
+      <a href="#" class="logo scroll">landing page</a>
       <ul class="navbar-list white" id="link-list">
       </ul>
       <a href="javascript:void(0);" class="icon" id="burger-menu">
@@ -31,33 +32,34 @@
       <section class="section about" id="about-this-landingpage">
         <h1 class="title size-5 white">About this landingpage</h1>
         <div class="content">
-          <h3 class="white pt-2">
+          <p class="white pt-2 description">
             In this SPA you can dynamically create a section with a simple
-            header and a little description.
-          </h3>
+            header and a little description. Then the link will be automatically added to the navbar. There is also present the smooth scrolling to each section.
+          </p>
           <div class="instruction pt-2">
-            <h4 class="white">
+            <h3 class="white">
               Instruction:
-            </h4>
-            <ul class="pt-1">
+            </h3>
+            <ul class="no-style description">
               <li class="white">Go to "create your section"</li>
               <li class="white">
                 Insert the title of the section and the description
               </li>
               <li class="white">Submit the section</li>
             </ul>
-            <p class="white pt-2">
-              NOTE: <br />
+            <h3 class="white pt-2">
+              Notes:</h3>
+              <p class="white pt-1 description">
               If you try to submit another section with the same title it will
-              give you a warning! <br />
+              give you a warning!
               You cannot create two sections with the same title but you can
               create two section with the same content
             </p>
           </div>
         </div>
       </section>
-      <section class="section create" id="create-your-section">
-        <h3 class="title size-5 white">Create your section</h3>
+      <section class="section create white" id="create-your-section">
+        <h3 class="title size-5">Create your section</h3>
         <form action="" class="form" id="form">
           <div class="form-group">
             <label for="" class="form-label">title</label>
@@ -67,11 +69,11 @@
             <label for="" class="form-label">content</label>
             <textarea name="content" id="content"> </textarea>
           </div>
-          <input type="submit" class="button" id="submit" value="Submit" />
+          <input type="submit" class="button white" id="submit" value="Submit" />
         </form>
       </section>
     </main>
-    <footer class="footer">created by <b>Alexandru Cotin</b></footer>
+    <footer class="footer white"><h5 class="size-oneHalf">created by Alexandru Cotin</h5></footer>
   </body>
   <script src="./js/createSection.js"></script>
   <script src="./js/smoothScroll.js"></script>
