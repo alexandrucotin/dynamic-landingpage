@@ -18,5 +18,12 @@
 }
 
 @media (min-width: 1025px) {
+  .home {
+    flex-direction: row;
+  }
 
+  .secondary-title {
+    font-size: 1.5rem;
+    width: 5%;
+  }
 }

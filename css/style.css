@@ -14,6 +14,7 @@
 }
 
 body {
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   font-family: "Lato", sans-serif;
@@ -73,7 +74,7 @@ ul {
   body {
     display: grid;
     grid-template-columns: 10rem 1fr;
-    grid-template-rows: 9fr 1fr;
+    grid-template-rows: 1fr 8rem;
     grid-template-areas:
       "navbar main"
       "footer footer";
@@ -90,15 +91,19 @@ ul {
 
 @media (min-width: 1025px) {
   body {
+    overflow: hidden;
     display: grid;
     grid-template-columns: 10rem 1fr;
-    grid-template-rows: 9fr 1fr;
+    grid-template-rows: 1fr 8rem;
     grid-template-areas:
       "navbar main"
       "footer footer";
   }
 
   .section {
-    padding: unset;
+    padding: 2.5rem;
+  }
+  .page-container {
+    grid-area: main;
   }
 }

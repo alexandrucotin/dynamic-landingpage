@@ -57,4 +57,21 @@
 }
 
 @media (min-width: 1025px) {
+  .navbar {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: unset;
+    height: 100%;
+    background-color: unset;
+  }
+
+  #link-list {
+    display: flex;
+  }
+
+  .icon {
+    display: none;
+  }
 }
